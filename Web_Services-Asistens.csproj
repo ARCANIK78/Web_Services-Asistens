@@ -103,6 +103,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AsistenciaController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\qrController.cs" />
     <Compile Include="dbAsistencia.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

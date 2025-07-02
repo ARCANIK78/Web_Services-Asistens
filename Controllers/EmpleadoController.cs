@@ -42,6 +42,10 @@ namespace Web_Services_Asistens.Controllers
             {
                 var empleadoExistente = adaptador.GetData();
                 bool existe = empleadoExistente.Any(e => e.CI == nuevo.CI);
+                if(existe)
+                {
+                    return BadRequest($"Ya existe un empleado con CI {nuevo.CI}.");
+                }
                 adaptador.Insert(
                     nuevo.CI,
                     nuevo.Nombre,
@@ -50,7 +54,7 @@ namespace Web_Services_Asistens.Controllers
                     nuevo.Direccion,
                     nuevo.FechaNacimiento
 
-                    );
+                 );
                 string contenidoQR = $"CI={nuevo.CI}";
                 string codigoQR = GeneradorQR.GenerarQR(contenidoQR);
                 DateTime fechaGenerada = DateTime.Now;

@@ -2,16 +2,17 @@
 <xs:schema id="dbAsistencia" targetNamespace="http://tempuri.org/dbAsistencia.xsd" xmlns:mstns="http://tempuri.org/dbAsistencia.xsd" xmlns="http://tempuri.org/dbAsistencia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="dbAsistenciaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbAsistenciaConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.dbAsistenciaConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="dbAsistenciaConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbAsistenciaConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.dbAsistenciaConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="dbAsistenciaConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbAsistenciaConnectionString2 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.dbAsistenciaConnectionString2.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="dbAsistenciaConnectionString3" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbAsistenciaConnectionString3 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.dbAsistenciaConnectionString3.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TAsistenciaTableAdapter" GeneratorDataComponentClassName="TAsistenciaTableAdapter" Name="TAsistencia" UserDataComponentName="TAsistenciaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="dbAsistenciaConnectionString2 (Web.config)" DbObjectName="dbAsistencia.dbo.TAsistencia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="dbAsistenciaConnectionString3 (Web.config)" DbObjectName="dbAsistencia.dbo.TAsistencia" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[TAsistencia] WHERE (([ID] = @Original_ID))</CommandText>
@@ -22,9 +23,8 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[TAsistencia] ([ID], [Hora], [Fecha], [CI], [falta]) VALUES (@ID, @Hora, @Fecha, @CI, @falta)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[TAsistencia] ([Hora], [Fecha], [CI], [falta]) VALUES (@Hora, @Fecha, @CI, @falta)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@Hora" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="Hora" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CI" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CI" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -40,9 +40,8 @@
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[TAsistencia] SET [ID] = @ID, [Hora] = @Hora, [Fecha] = @Fecha, [CI] = @CI, [falta] = @falta WHERE (([ID] = @Original_ID))</CommandText>
+                    <CommandText>UPDATE [dbo].[TAsistencia] SET [Hora] = @Hora, [Fecha] = @Fecha, [CI] = @CI, [falta] = @falta WHERE (([ID] = @Original_ID))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@Hora" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="Hora" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CI" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CI" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -62,87 +61,9 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="THorarioTrabajoTableAdapter" GeneratorDataComponentClassName="THorarioTrabajoTableAdapter" Name="THorarioTrabajo" UserDataComponentName="THorarioTrabajoTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="dbAsistenciaConnectionString2 (Web.config)" DbObjectName="dbAsistencia.dbo.THorarioTrabajo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[THorarioTrabajo] ([HoraEntradaAM], [HoraSalidaAM], [HoraEntradaPM], [HoraSalidaPM]) VALUES (@HoraEntradaAM, @HoraSalidaAM, @HoraEntradaPM, @HoraSalidaPM)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@HoraEntradaAM" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="HoraEntradaAM" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@HoraSalidaAM" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="HoraSalidaAM" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@HoraEntradaPM" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="HoraEntradaPM" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@HoraSalidaPM" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="HoraSalidaPM" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT HoraEntradaAM, HoraSalidaAM, HoraEntradaPM, HoraSalidaPM FROM dbo.THorarioTrabajo</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="HoraEntradaAM" DataSetColumn="HoraEntradaAM" />
-              <Mapping SourceColumn="HoraSalidaAM" DataSetColumn="HoraSalidaAM" />
-              <Mapping SourceColumn="HoraEntradaPM" DataSetColumn="HoraEntradaPM" />
-              <Mapping SourceColumn="HoraSalidaPM" DataSetColumn="HoraSalidaPM" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TQRTableAdapter" GeneratorDataComponentClassName="TQRTableAdapter" Name="TQR" UserDataComponentName="TQRTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="dbAsistenciaConnectionString2 (Web.config)" DbObjectName="dbAsistencia.dbo.TQR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[TQR] WHERE (([ID] = @Original_ID))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[TQR] ([CI], [CodigoQR], [FechaGeneracion]) VALUES (@CI, @CodigoQR, @FechaGeneracion)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CI" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CI" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CodigoQR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CodigoQR" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaGeneracion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaGeneracion" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, CI, CodigoQR, FechaGeneracion FROM dbo.TQR</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[TQR] SET [CI] = @CI, [CodigoQR] = @CodigoQR, [FechaGeneracion] = @FechaGeneracion WHERE (([ID] = @Original_ID))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CI" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CI" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CodigoQR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CodigoQR" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaGeneracion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaGeneracion" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="ID" DataSetColumn="ID" />
-              <Mapping SourceColumn="CI" DataSetColumn="CI" />
-              <Mapping SourceColumn="CodigoQR" DataSetColumn="CodigoQR" />
-              <Mapping SourceColumn="FechaGeneracion" DataSetColumn="FechaGeneracion" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TEmpleadoTableAdapter" GeneratorDataComponentClassName="TEmpleadoTableAdapter" Name="TEmpleado" UserDataComponentName="TEmpleadoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="dbAsistenciaConnectionString2 (Web.config)" DbObjectName="dbAsistencia.dbo.TEmpleado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="dbAsistenciaConnectionString3 (Web.config)" DbObjectName="dbAsistencia.dbo.TEmpleado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[TEmpleado] WHERE (([CI] = @Original_CI))</CommandText>
@@ -196,18 +117,96 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="THorarioTrabajoTableAdapter" GeneratorDataComponentClassName="THorarioTrabajoTableAdapter" Name="THorarioTrabajo" UserDataComponentName="THorarioTrabajoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbAsistenciaConnectionString3 (Web.config)" DbObjectName="dbAsistencia.dbo.THorarioTrabajo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[THorarioTrabajo] ([HoraEntradaAM], [HoraSalidaAM], [HoraEntradaPM], [HoraSalidaPM]) VALUES (@HoraEntradaAM, @HoraSalidaAM, @HoraEntradaPM, @HoraSalidaPM)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@HoraEntradaAM" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="HoraEntradaAM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@HoraSalidaAM" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="HoraSalidaAM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@HoraEntradaPM" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="HoraEntradaPM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@HoraSalidaPM" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="HoraSalidaPM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT HoraEntradaAM, HoraSalidaAM, HoraEntradaPM, HoraSalidaPM FROM dbo.THorarioTrabajo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="HoraEntradaAM" DataSetColumn="HoraEntradaAM" />
+              <Mapping SourceColumn="HoraSalidaAM" DataSetColumn="HoraSalidaAM" />
+              <Mapping SourceColumn="HoraEntradaPM" DataSetColumn="HoraEntradaPM" />
+              <Mapping SourceColumn="HoraSalidaPM" DataSetColumn="HoraSalidaPM" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TQRTableAdapter" GeneratorDataComponentClassName="TQRTableAdapter" Name="TQR" UserDataComponentName="TQRTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbAsistenciaConnectionString3 (Web.config)" DbObjectName="dbAsistencia.dbo.TQR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[TQR] WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[TQR] ([CI], [CodigoQR], [FechaGeneracion]) VALUES (@CI, @CodigoQR, @FechaGeneracion)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CI" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CodigoQR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CodigoQR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaGeneracion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaGeneracion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, CI, CodigoQR, FechaGeneracion FROM dbo.TQR</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[TQR] SET [CI] = @CI, [CodigoQR] = @CodigoQR, [FechaGeneracion] = @FechaGeneracion WHERE (([ID] = @Original_ID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CI" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CodigoQR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CodigoQR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaGeneracion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaGeneracion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="CI" DataSetColumn="CI" />
+              <Mapping SourceColumn="CodigoQR" DataSetColumn="CodigoQR" />
+              <Mapping SourceColumn="FechaGeneracion" DataSetColumn="FechaGeneracion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dbAsistencia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dbAsistencia" msprop:Generator_DataSetName="dbAsistencia">
+  <xs:element name="dbAsistencia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dbAsistencia" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dbAsistencia">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="TAsistencia" msprop:Generator_RowEvHandlerName="TAsistenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="TAsistenciaRowDeleted" msprop:Generator_RowDeletingName="TAsistenciaRowDeleting" msprop:Generator_RowEvArgName="TAsistenciaRowChangeEvent" msprop:Generator_TablePropName="TAsistencia" msprop:Generator_RowChangedName="TAsistenciaRowChanged" msprop:Generator_RowChangingName="TAsistenciaRowChanging" msprop:Generator_TableClassName="TAsistenciaDataTable" msprop:Generator_RowClassName="TAsistenciaRow" msprop:Generator_TableVarName="tableTAsistencia" msprop:Generator_UserTableName="TAsistencia">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Hora" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_ColumnPropNameInTable="HoraColumn" msprop:Generator_ColumnVarNameInTable="columnHora" msprop:Generator_UserColumnName="Hora" type="xs:duration" minOccurs="0" />
               <xs:element name="Fecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
               <xs:element name="CI" msprop:Generator_ColumnPropNameInRow="CI" msprop:Generator_ColumnPropNameInTable="CIColumn" msprop:Generator_ColumnVarNameInTable="columnCI" msprop:Generator_UserColumnName="CI" minOccurs="0">
@@ -218,38 +217,6 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="falta" msprop:Generator_ColumnPropNameInRow="falta" msprop:Generator_ColumnPropNameInTable="faltaColumn" msprop:Generator_ColumnVarNameInTable="columnfalta" msprop:Generator_UserColumnName="falta" type="xs:boolean" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="THorarioTrabajo" msprop:Generator_RowEvHandlerName="THorarioTrabajoRowChangeEventHandler" msprop:Generator_RowDeletedName="THorarioTrabajoRowDeleted" msprop:Generator_RowDeletingName="THorarioTrabajoRowDeleting" msprop:Generator_RowEvArgName="THorarioTrabajoRowChangeEvent" msprop:Generator_TablePropName="THorarioTrabajo" msprop:Generator_RowChangedName="THorarioTrabajoRowChanged" msprop:Generator_RowChangingName="THorarioTrabajoRowChanging" msprop:Generator_TableClassName="THorarioTrabajoDataTable" msprop:Generator_RowClassName="THorarioTrabajoRow" msprop:Generator_TableVarName="tableTHorarioTrabajo" msprop:Generator_UserTableName="THorarioTrabajo">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="HoraEntradaAM" msprop:Generator_ColumnPropNameInRow="HoraEntradaAM" msprop:Generator_ColumnPropNameInTable="HoraEntradaAMColumn" msprop:Generator_ColumnVarNameInTable="columnHoraEntradaAM" msprop:Generator_UserColumnName="HoraEntradaAM" type="xs:duration" minOccurs="0" />
-              <xs:element name="HoraSalidaAM" msprop:Generator_ColumnPropNameInRow="HoraSalidaAM" msprop:Generator_ColumnPropNameInTable="HoraSalidaAMColumn" msprop:Generator_ColumnVarNameInTable="columnHoraSalidaAM" msprop:Generator_UserColumnName="HoraSalidaAM" type="xs:duration" minOccurs="0" />
-              <xs:element name="HoraEntradaPM" msprop:Generator_ColumnPropNameInRow="HoraEntradaPM" msprop:Generator_ColumnPropNameInTable="HoraEntradaPMColumn" msprop:Generator_ColumnVarNameInTable="columnHoraEntradaPM" msprop:Generator_UserColumnName="HoraEntradaPM" type="xs:duration" minOccurs="0" />
-              <xs:element name="HoraSalidaPM" msprop:Generator_ColumnPropNameInRow="HoraSalidaPM" msprop:Generator_ColumnPropNameInTable="HoraSalidaPMColumn" msprop:Generator_ColumnVarNameInTable="columnHoraSalidaPM" msprop:Generator_UserColumnName="HoraSalidaPM" type="xs:duration" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="TQR" msprop:Generator_RowEvHandlerName="TQRRowChangeEventHandler" msprop:Generator_RowDeletedName="TQRRowDeleted" msprop:Generator_RowDeletingName="TQRRowDeleting" msprop:Generator_RowEvArgName="TQRRowChangeEvent" msprop:Generator_TablePropName="TQR" msprop:Generator_RowChangedName="TQRRowChanged" msprop:Generator_RowChangingName="TQRRowChanging" msprop:Generator_TableClassName="TQRDataTable" msprop:Generator_RowClassName="TQRRow" msprop:Generator_TableVarName="tableTQR" msprop:Generator_UserTableName="TQR">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="CI" msprop:Generator_ColumnPropNameInRow="CI" msprop:Generator_ColumnPropNameInTable="CIColumn" msprop:Generator_ColumnVarNameInTable="columnCI" msprop:Generator_UserColumnName="CI">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="CodigoQR" msprop:Generator_ColumnPropNameInRow="CodigoQR" msprop:Generator_ColumnPropNameInTable="CodigoQRColumn" msprop:Generator_ColumnVarNameInTable="columnCodigoQR" msprop:Generator_UserColumnName="CodigoQR">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="FechaGeneracion" msprop:Generator_ColumnPropNameInRow="FechaGeneracion" msprop:Generator_ColumnPropNameInTable="FechaGeneracionColumn" msprop:Generator_ColumnVarNameInTable="columnFechaGeneracion" msprop:Generator_UserColumnName="FechaGeneracion" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -289,25 +256,57 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="THorarioTrabajo" msprop:Generator_RowEvHandlerName="THorarioTrabajoRowChangeEventHandler" msprop:Generator_RowDeletedName="THorarioTrabajoRowDeleted" msprop:Generator_RowDeletingName="THorarioTrabajoRowDeleting" msprop:Generator_RowEvArgName="THorarioTrabajoRowChangeEvent" msprop:Generator_TablePropName="THorarioTrabajo" msprop:Generator_RowChangedName="THorarioTrabajoRowChanged" msprop:Generator_RowChangingName="THorarioTrabajoRowChanging" msprop:Generator_TableClassName="THorarioTrabajoDataTable" msprop:Generator_RowClassName="THorarioTrabajoRow" msprop:Generator_TableVarName="tableTHorarioTrabajo" msprop:Generator_UserTableName="THorarioTrabajo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HoraEntradaAM" msprop:Generator_ColumnPropNameInRow="HoraEntradaAM" msprop:Generator_ColumnPropNameInTable="HoraEntradaAMColumn" msprop:Generator_ColumnVarNameInTable="columnHoraEntradaAM" msprop:Generator_UserColumnName="HoraEntradaAM" type="xs:duration" minOccurs="0" />
+              <xs:element name="HoraSalidaAM" msprop:Generator_ColumnPropNameInRow="HoraSalidaAM" msprop:Generator_ColumnPropNameInTable="HoraSalidaAMColumn" msprop:Generator_ColumnVarNameInTable="columnHoraSalidaAM" msprop:Generator_UserColumnName="HoraSalidaAM" type="xs:duration" minOccurs="0" />
+              <xs:element name="HoraEntradaPM" msprop:Generator_ColumnPropNameInRow="HoraEntradaPM" msprop:Generator_ColumnPropNameInTable="HoraEntradaPMColumn" msprop:Generator_ColumnVarNameInTable="columnHoraEntradaPM" msprop:Generator_UserColumnName="HoraEntradaPM" type="xs:duration" minOccurs="0" />
+              <xs:element name="HoraSalidaPM" msprop:Generator_ColumnPropNameInRow="HoraSalidaPM" msprop:Generator_ColumnPropNameInTable="HoraSalidaPMColumn" msprop:Generator_ColumnVarNameInTable="columnHoraSalidaPM" msprop:Generator_UserColumnName="HoraSalidaPM" type="xs:duration" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TQR" msprop:Generator_RowEvHandlerName="TQRRowChangeEventHandler" msprop:Generator_RowDeletedName="TQRRowDeleted" msprop:Generator_RowDeletingName="TQRRowDeleting" msprop:Generator_RowEvArgName="TQRRowChangeEvent" msprop:Generator_TablePropName="TQR" msprop:Generator_RowChangedName="TQRRowChanged" msprop:Generator_RowChangingName="TQRRowChanging" msprop:Generator_TableClassName="TQRDataTable" msprop:Generator_RowClassName="TQRRow" msprop:Generator_TableVarName="tableTQR" msprop:Generator_UserTableName="TQR">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="CI" msprop:Generator_ColumnPropNameInRow="CI" msprop:Generator_ColumnPropNameInTable="CIColumn" msprop:Generator_ColumnVarNameInTable="columnCI" msprop:Generator_UserColumnName="CI">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoQR" msprop:Generator_ColumnPropNameInRow="CodigoQR" msprop:Generator_ColumnPropNameInTable="CodigoQRColumn" msprop:Generator_ColumnVarNameInTable="columnCodigoQR" msprop:Generator_UserColumnName="CodigoQR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaGeneracion" msprop:Generator_ColumnPropNameInRow="FechaGeneracion" msprop:Generator_ColumnPropNameInTable="FechaGeneracionColumn" msprop:Generator_ColumnVarNameInTable="columnFechaGeneracion" msprop:Generator_UserColumnName="FechaGeneracion" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TAsistencia" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
-    <xs:unique name="TQR_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:TQR" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
     <xs:unique name="TEmpleado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TEmpleado" />
       <xs:field xpath="mstns:CI" />
+    </xs:unique>
+    <xs:unique name="TQR_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TQR" />
+      <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="FK_TAsistencia_TEmpleado" msdata:parent="TEmpleado" msdata:child="TAsistencia" msdata:parentkey="CI" msdata:childkey="CI" msprop:Generator_UserParentTable="TEmpleado" msprop:Generator_UserChildTable="TAsistencia" msprop:Generator_RelationVarName="relationFK_TAsistencia_TEmpleado" msprop:Generator_UserRelationName="FK_TAsistencia_TEmpleado" msprop:Generator_ChildPropName="GetTAsistenciaRows" msprop:Generator_ParentPropName="TEmpleadoRow" />
-      <msdata:Relationship name="FK_TQR_TEmpleado" msdata:parent="TEmpleado" msdata:child="TQR" msdata:parentkey="CI" msdata:childkey="CI" msprop:Generator_UserParentTable="TEmpleado" msprop:Generator_UserChildTable="TQR" msprop:Generator_RelationVarName="relationFK_TQR_TEmpleado" msprop:Generator_UserRelationName="FK_TQR_TEmpleado" msprop:Generator_ChildPropName="GetTQRRows" msprop:Generator_ParentPropName="TEmpleadoRow" />
+      <msdata:Relationship name="FK_TQR_TEmpleado" msdata:parent="TEmpleado" msdata:child="TQR" msdata:parentkey="CI" msdata:childkey="CI" msprop:Generator_UserParentTable="TEmpleado" msprop:Generator_UserChildTable="TQR" msprop:Generator_RelationVarName="relationFK_TQR_TEmpleado" msprop:Generator_ChildPropName="GetTQRRows" msprop:Generator_ParentPropName="TEmpleadoRow" msprop:Generator_UserRelationName="FK_TQR_TEmpleado" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
