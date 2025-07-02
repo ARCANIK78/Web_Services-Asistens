@@ -55,7 +55,7 @@ namespace Web_Services_Asistens.Controllers
                     nuevo.FechaNacimiento
 
                  );
-                string contenidoQR = $"CI={nuevo.CI}";
+                string contenidoQR = $"{nuevo.CI}";
                 string codigoQR = GeneradorQR.GenerarQR(contenidoQR);
                 DateTime fechaGenerada = DateTime.Now;
                 adaptadorQR.Insert(nuevo.CI, codigoQR, fechaGenerada);

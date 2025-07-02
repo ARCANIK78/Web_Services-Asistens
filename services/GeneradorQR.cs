@@ -12,7 +12,7 @@ namespace WS_asistens.services
     {
         public static string GenerarQR(string ci)
         {
-            string contenido = $"CI={ci}";
+            string contenido = $"{ci}";
             using (var qrGenerator = new QRCodeGenerator())
             {
                 var datosQR = qrGenerator.CreateQrCode(contenido, QRCodeGenerator.ECCLevel.Q);

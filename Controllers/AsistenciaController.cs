@@ -12,21 +12,22 @@ namespace Web_Services_Asistens.Controllers
         [HttpPost]
         public IHttpActionResult Post([FromBody] Asistencia nuevo)
         {
-            if (nuevo == null)
-                return BadRequest("Datos de Asistencia Invalidos");
+            if (nuevo == null || string.IsNullOrEmpty(nuevo.CI) || string.IsNullOrEmpty(nuevo.Tipo))
+                return BadRequest("Datos de asistencia inválidos.");
+
             var adaptador = new dbAsistenciaTableAdapters.TAsistenciaTableAdapter();
             DateTime fechaHoy = DateTime.Now.Date;
-            TimeSpan horaACtual = DateTime.Now.TimeOfDay;
+            TimeSpan horaActual = DateTime.Now.TimeOfDay;
+
             try
             {
-                adaptador.Insert( horaACtual, fechaHoy, nuevo.CI, nuevo.Falta);
-                return Ok("Asistencia registrada correctamente. ");
+                adaptador.InsertarValores(horaActual.ToString(@"hh\:mm\:ss"), fechaHoy.ToString("yyyy-MM-dd"), nuevo.CI, nuevo.Falta, nuevo.Tipo);
+                return Ok("Asistencia registrada correctamente.");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest($"Error al registrar asistencia: {ex.Message}");
             }
-
         }
     }
 }

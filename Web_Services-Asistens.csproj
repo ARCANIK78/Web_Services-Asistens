@@ -103,6 +103,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AsistenciaController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\HorarioTrabajoController.cs" />
     <Compile Include="Controllers\qrController.cs" />
     <Compile Include="dbAsistencia.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +115,7 @@
     </Compile>
     <Compile Include="Models\Asistencia.cs" />
     <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\HorarioTrabajo.cs" />
     <Compile Include="Models\qr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\GeneradorQR.cs" />
